@@ -23,5 +23,23 @@ client.listProviders().then( function( providers ) {
     console.log( "Data for waterlevel.ie on 31st of July 2012" );
     console.log( data );
 
+} ).then( function() {
+
+    return client.listDays( "sepa.org.uk" );
+
+} ).then( function( days ) {
+
+    console.log( "Data days for sepa.org.uk" );
+    console.log( days );
+
+} ).then( function() {
+
+    return client.getData( "sepa.org.uk", "2019-01-23" );
+
+} ).then( function( data ) {
+
+    console.log( "Data for sepa.org.uk on 1st of January 2019" );
+    console.log( data );
+
 } );
 
